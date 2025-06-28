@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resx="clr-namespace:MauiQuestOrientation.Resources.Strings"
+             x:Class="MauiQuestOrientation.GamePage"
+             Title="{x:Static resx:AppResources.Game}">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+            <Label Text="{x:Static resx:AppResources.EnterCheckpointCode}" FontSize="18"/>
+            <HorizontalStackLayout>
+                <Entry x:Name="CodeEntry" Placeholder="{x:Static resx:AppResources.Code}"/>
+                <Button Text="{x:Static resx:AppResources.Enter}" Clicked="OnEnterCodeClicked"/>
+            </HorizontalStackLayout>
+            <Frame x:Name="CutsceneFrame" IsVisible="False" Padding="10">
+                <VerticalStackLayout>
+                    <Image x:Name="CutsceneImage" IsVisible="False" HeightRequest="150"/>
+                    <Label x:Name="CutsceneText" FontSize="18"/>
+                    <StackLayout x:Name="ChoicesLayout" Spacing="8"/>
+                </VerticalStackLayout>
+            </Frame>
+            <Label Text="{x:Static resx:AppResources.Inventory}" FontSize="18" Margin="0,20,0,0"/>
+            <StackLayout x:Name="InventoryLayout" Spacing="4"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

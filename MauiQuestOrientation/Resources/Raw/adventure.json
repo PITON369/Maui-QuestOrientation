@@ -1,0 +1,108 @@
+{
+  "languages": ["ru", "en"],
+  "controlPoints": [
+    { "code": "11", "cutsceneId": "start" },
+    { "code": "12", "cutsceneId": "forest" },
+    { "code": "13", "cutsceneId": "lake" }
+  ],
+  "cutscenes": [
+    {
+      "id": "start",
+      "text": {
+        "ru": "Вы стоите у старта. Перед вами развилка: налево — лес, направо — озеро.",
+        "en": "You are at the start. Ahead is a fork: left to the forest, right to the lake."
+      },
+      "image": "",
+      "choices": [
+        {
+          "text": { "ru": "Пойти в лес", "en": "Go to the forest" },
+          "nextSceneId": "forest"
+        },
+        {
+          "text": { "ru": "Пойти к озеру", "en": "Go to the lake" },
+          "nextSceneId": "lake"
+        }
+      ]
+    },
+    {
+      "id": "forest",
+      "text": {
+        "ru": "Вы в лесу. Здесь тихо и прохладно. На пне лежит аптечка.",
+        "en": "You are in the forest. It's quiet and cool. There is a medkit on a stump."
+      },
+      "image": "",
+      "choices": [
+        {
+          "text": { "ru": "Взять аптечку", "en": "Take the medkit" },
+          "nextSceneId": "forest_medkit"
+        },
+        {
+          "text": { "ru": "Вернуться к развилке", "en": "Return to the fork" },
+          "nextSceneId": "start"
+        }
+      ]
+    },
+    {
+      "id": "forest_medkit",
+      "text": {
+        "ru": "Вы взяли аптечку! Теперь она в вашем инвентаре.",
+        "en": "You took the medkit! It's now in your inventory."
+      },
+      "image": "",
+      "choices": [
+        {
+          "text": { "ru": "Вернуться к развилке", "en": "Return to the fork" },
+          "nextSceneId": "start"
+        }
+      ]
+    },
+    {
+      "id": "lake",
+      "text": {
+        "ru": "Вы подошли к озеру. На берегу что-то блестит.",
+        "en": "You approach the lake. Something is shining on the shore."
+      },
+      "image": "",
+      "choices": [
+        {
+          "text": { "ru": "Осмотреть блестящий предмет", "en": "Inspect the shiny object" },
+          "nextSceneId": "lake_item"
+        },
+        {
+          "text": { "ru": "Вернуться к развилке", "en": "Return to the fork" },
+          "nextSceneId": "start"
+        }
+      ]
+    },
+    {
+      "id": "lake_item",
+      "text": {
+        "ru": "Вы нашли ключ! Он добавлен в инвентарь.",
+        "en": "You found a key! It's now in your inventory."
+      },
+      "image": "",
+      "choices": [
+        {
+          "text": { "ru": "Вернуться к развилке", "en": "Return to the fork" },
+          "nextSceneId": "start"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "medkit",
+      "name": { "ru": "Аптечка", "en": "Medkit" },
+      "description": { "ru": "Восстанавливает здоровье", "en": "Restores health" },
+      "canUseOnOthers": true,
+      "image": ""
+    },
+    {
+      "id": "key",
+      "name": { "ru": "Ключ", "en": "Key" },
+      "description": { "ru": "Открывает дверь", "en": "Opens a door" },
+      "canUseOnOthers": false,
+      "image": ""
+    }
+  ]
+}
